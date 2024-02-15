@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Questions Form{% endblock %}
+{% block content %}
+<h1>Create Your Madlibs for: {{title}}</h1>
+<form id="questions-form" action='/story'>
+    {% for question in questions %}
+    <div class="input">
+        <label>{{question}}:</label>
+        <input type="text" placeholder="your answer" name="{{question}}" class="question-field">
+    </div>
+    {% endfor %}
+    <input type="hidden" name="story_code" value="{{story_code}}">
+    <button class="button">Submit</button>
+</form>
+{% endblock %}

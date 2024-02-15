@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Questions Form{% endblock %}
+{% block content %}
+<h1>Choose a Prompt</h1>
+<form action="/questions">
+    <div>
+        <label>Choose a prompt!</label>
+        <select name="story_code">
+            {% for story in stories %}
+            <option value="{{story.code}}">{{story.title}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button class="button">Submit</button>
+</form>
+{% endblock %}
